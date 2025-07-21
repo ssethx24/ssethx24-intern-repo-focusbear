@@ -1,4 +1,5 @@
 # VS Code Productivity Shortcuts
+# Reflection
 
 # Name: Shaurya Seth
 
@@ -37,7 +38,7 @@ Here are my top 10 shortcuts, categorized by how they help during different part
 
 ---
 
-# Reflection
+
 
 ### Which shortcuts do I think will be most useful?
 
