@@ -1,0 +1,67 @@
+# Data Privacy & Confidentiality – Reflection
+
+## Key Takeaways from Focus Bear’s Privacy Policy
+
+- Focus Bear collects user data to deliver personalized productivity features.
+- All data is handled in accordance with strict privacy standards.
+- Personal information, such as usage habits, email addresses, and routines, is stored securely and not shared with third parties without consent.
+- Users have control over their data and can request access or deletion at any time.
+
+---
+
+## What Is Considered Confidential at Focus Bear?
+
+- **User data**: names, emails, productivity logs, and routine preferences
+- **Source code and internal documentation**
+- **Design files and unreleased product features**
+- **Company plans, strategies, or performance data**
+- **Login credentials or API keys**
+
+---
+
+## Best Practices for Handling Confidential Data
+
+- Never copy or share sensitive information outside of authorized tools (e.g., Notion, GitHub, Slack channels with correct permissions)
+- Do not paste sensitive code or data into public AI tools like ChatGPT or Claude
+- Use secure password managers (like 1Password) for credentials
+- Lock your device and use strong passwords for accounts
+- Avoid storing sensitive info in local files or screenshots
+
+---
+
+## Reflection
+
+### What steps can I take to ensure data security in my daily tasks?
+
+- Double-check that I’m working in the correct GitHub repo (public vs private)
+- Avoid storing hardcoded secrets or user data in local files or shared code
+- Use `.env` files for API keys and keep them in `.gitignore`
+- Ask before using external tools to process any company or user data
+
+### How should I store, share, and dispose of sensitive information?
+
+- Store: Use secured, company-approved tools (Notion, GitHub, Slack)
+- Share: Only with team members who need access, and through secure channels
+- Dispose: Delete outdated sensitive info from local storage, and avoid sending it through unsecured mediums (e.g., email, screenshots)
+
+### Common Privacy Mistakes to Avoid
+
+- Copying data into AI tools or public forums without anonymizing it
+- Sending screenshots that include personal or sensitive info
+- Forgetting to restrict access to internal links or docs
+- Committing secrets or credentials to version control
+
+---
+
+## My Practice for Better Data Security
+
+### Habit I’ll Adopt:
+I will **always use `.env` files and Git ignore rules** to keep API keys and credentials out of the codebase — even for local dev projects.
+
+### Key Learning:
+> **If in doubt, treat all data as confidential unless confirmed otherwise.**
+
+This mindset helps reduce risk and encourages responsible handling of all information.
+
+Staying privacy-aware isn’t just about rules — it’s about building trust with users and teammates. I want to contribute to that trust by being responsible in how I work, store, and share data.
+ 
