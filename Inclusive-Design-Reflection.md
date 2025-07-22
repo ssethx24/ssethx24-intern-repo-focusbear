@@ -4,21 +4,19 @@
 
 Vulnerable populations include individuals who may be at a higher risk of exclusion or harm due to physical, cognitive, emotional, or social factors. In the context of Focus Bear, we primarily support **neurodivergent individuals**, including those with **ADHD, Autism, anxiety, or executive dysfunction**.
 
-These users may face:
+These users may face the following problems :
 - Difficulty with focus, planning, and time management
 - Overwhelm from cluttered or inconsistent UI
 - Sensory overload from bright colors, animations, or excessive notifications
 - Frustration with tools that punish instead of guide
 
----
-
 ## Ethical & Accessible Design Considerations
 
 To support neurodivergent users:
-- Ensure that we keep the language used **simple, direct, and non-judgmental**.
-- Usage of  **predictable navigation** with minimal steps and clear flows.
-- Allowing **customization of sounds, colors, and reminders**.
-- Avoid guilt-tripping or shame-based messaging that demotivates them. 
+- Ensure that  the language used **simple, direct, and non-judgmental**.
+- Use   **predictable navigation** with minimal steps and clear flows.
+- Allow**customization of sounds, colors, and reminders**.
+- Avoid guilt-tripping or shame-based messaging that demotivates the user. 
 - Respect sensory needs with **calm, non-intrusive visuals**.
 
 In terms of team collaboration:
@@ -67,7 +65,6 @@ It’s a small copy change, but it could mean a lot to someone already feeling b
 
 > “Hey there! Thanks for sharing how you’re feeling — you’re not alone. A lot of our users go through the same thing, and it’s totally okay to have off days. If it helps, try restarting with just one small task. You don’t have to do everything perfectly — we’re here to support you step by step. Let us know how we can make Focus Bear work better for you.”
 
----
 
-Inclusive design isn’t just about accessibility checklists — it’s about empathy, listening, and meeting people where they are. As a developer, I want to keep that mindset at the core of my work.
+Inclusive design isn’t just about accessibility checklists — it’s about empathy, listening, and meeting people where they are. As a developer, I want to keep that mindset at the core of my work. 
  
