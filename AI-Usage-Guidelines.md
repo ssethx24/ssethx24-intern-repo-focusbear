@@ -1,6 +1,6 @@
 # AI Usage Guidelines – Focus Bear
 
-## 🔍 Research & Learn
+## Research & Learn
 
 ### What AI tools are typically used for your role?
 
@@ -35,9 +35,8 @@ As a front-end developer intern, some commonly used AI tools include:
 - **Ask a teammate or senior developer** to review AI-assisted code if unsure
 - Treat AI suggestions as a *starting point*, not final answers
 
----
 
-## 📝 Reflection
+## Reflection
 
 ### When should you use AI for assistance, and when should you rely on your own skills?
 
@@ -56,18 +55,19 @@ By using AI as a helper, not a crutch. I try to understand the “why” behind 
 
 ---
 
-## 🛠️ Task – Using AI Responsibly
+## Task – Using AI Responsibly
 
 ### Task I Tried:
 I used ChatGPT to generate a basic React component that fetches data from an API and displays a list.
 
 ### Was Editing or Fact-Checking Needed?
 Yes. The initial response included:
-- A deprecated way of handling async in `useEffect`
+- A deprecated way of handling async in `useEffect`. 
 - No error handling
-- Hardcoded placeholder URLs
+- Hardcoded placeholder URLs (in GPT 3.5 )
 
 I updated the code to use proper loading/error states and added types with TypeScript.
+GPT 4.0 gave exactly the correct code. 
 
 ### One Best Practice I’ll Follow:
 > **Always review and edit AI-generated code before using it in a project — treat it like a draft, not the final version**
