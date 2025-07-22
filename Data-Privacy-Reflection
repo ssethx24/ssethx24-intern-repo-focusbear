@@ -59,7 +59,7 @@
 I will **always use `.env` files and Git ignore rules** to keep API keys and credentials out of the codebase — even for local dev projects.
 
 ### Key Learning:
-> **If in doubt, treat all data as confidential unless confirmed otherwise.**
+> **When in doubt, treat all data as confidential unless confirmed otherwise.**
 
 This mindset helps reduce risk and encourages responsible handling of all information.
 

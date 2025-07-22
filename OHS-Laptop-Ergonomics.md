@@ -4,9 +4,9 @@
 
 Using a laptop without an external monitor or keyboard often leads to poor posture — hunching over the screen, bending the neck forward, and keeping wrists at awkward angles. Over time, this can cause:
 - Neck and back strain
-- Wrist pain or repetitive strain injuries (RSIs)
-- Eye fatigue from poor screen placement
-- General discomfort and lack of focus
+- Wrist pain or repetitive strain injuries. 
+- Eye fatigue from poor screen placement.
+- General discomfort and lack of focus.
 
 ---
 
