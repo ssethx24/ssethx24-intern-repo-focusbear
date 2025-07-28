@@ -4,11 +4,11 @@ export async function testPostRequest(params, redirectCallback) {
   const controller = getAbortController();
   try {
     const response = await axiosInstance.post(
-      '/test', 
+      '/posts', 
       params,
       { signal: controller.signal }
     );
-    if (response.status === 200 && redirectCallback) {
+    if (response.status === 201 && redirectCallback) {
       redirectCallback();
     }
     return response.data;

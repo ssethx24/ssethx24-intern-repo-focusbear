@@ -7,7 +7,7 @@ function App() {
 
   useEffect(() => {
     // Example params to send in the POST request
-    const params = { foo: 'bar' };
+    const params = { title: 'foo', body: 'bar', userId: 1 };
 
     testPostRequest(params)
       .then(data => setApiResponse(data))

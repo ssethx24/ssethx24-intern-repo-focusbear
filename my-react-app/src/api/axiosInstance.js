@@ -7,7 +7,7 @@ function generateRequestId() {
 
 // Create an Axios instance
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:5000/api ', // Replace with your API base URL
+  baseURL: 'https://jsonplaceholder.typicode.com', // Replace with your API base URL
   headers: {
     'Accept': '*/*',
     'X-Request-ID': generateRequestId(),
