@@ -3,8 +3,7 @@
 ## Agile Ceremonies – Overview
 
 ### 1. Daily Stand-ups
-Short (usually 15-minute) daily meetings where team members share:
-- What they worked on yesterday
+Short (usually 10-minute) daily meetings where team members share:
 - What they’re working on today
 - Any blockers or issues
 
