@@ -80,6 +80,32 @@ I pushed all working test files to GitHub. The testing setup is now complete and
 
 ![alt text](image-1.png)
 
+# Introduction to Unit Testing with Jest
+
+## 📁 Files Created
+- `src/utils/math.js` – Contains a simple `add()` utility function
+- `src/utils/math.test.js` – Unit test for the `add()` function using Jest
+
+## ✅ Why is automated testing important in software development?
+
+- Automated tests **prevent regressions** — changes in one part of the code won’t break other parts silently.
+- They help ensure **feature stability** across future updates.
+- Tests improve **developer confidence** when refactoring or adding new functionality.
+- Saves time in the long run by catching bugs early in development.
+
+## ⚠️ What did you find challenging when writing your first Jest test?
+
+- Understanding how Jest organizes test files (e.g., `*.test.js` or inside `__tests__` folders)
+- Remembering to **import the function** properly into the test file
+- Getting familiar with the **`expect()` syntax** and matchers like `.toBe()`
+
+After resolving these basics, writing and running the test was straightforward.
+
+## ✅ Final Result
+
+The utility function test passed successfully and is now part of the project’s automated test suite.
+
+
 # API Mocking and Async Testing – Reflection
 
 ## Files Created for This Test
