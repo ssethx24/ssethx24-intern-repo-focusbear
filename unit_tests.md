@@ -104,6 +104,7 @@ After resolving these basics, writing and running the test was straightforward.
 ## ✅ Final Result
 
 The utility function test passed successfully and is now part of the project’s automated test suite.
+![alt text](image-9.png)
 
 
 # API Mocking and Async Testing – Reflection
