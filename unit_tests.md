@@ -118,3 +118,30 @@ I  resolved these issues by:
 ✅ Test Result
 All tests passed successfully using mocked API data(these are all previous tests except the new counterSlice.test.js)
 ![alt text](image-7.png)
+
+# Testing React Components with Jest & React Testing Library
+
+## 📁 Files Created
+- `src/components/Greeting.js` – React component with heading and button
+- `src/components/Greeting.test.js` – Test file with rendering + click simulation
+
+## ✅ What are the benefits of using React Testing Library instead of testing implementation details?
+
+- It focuses on what the **user sees and does**, not internal props or state.
+- Tests are more robust and less likely to break on refactors.
+- Encourages good practices like accessibility (`getByRole`) and semantic queries.
+
+## ⚠️ What challenges did you encounter when simulating user interaction?
+
+- Getting the import path right (`./Greeting`) — small typos or case mismatches caused import failures.
+- Forgetting `@testing-library/jest-dom` led to `.toBeInTheDocument()` errors.
+- Choosing the right queries (`getByRole` vs `getByText`) helped avoid duplicate match errors.
+
+Once those were fixed, testing UI interactions became simple and intuitive!
+
+## ✅ Final Result
+
+All tests passed — component behavior and interactivity were verified with confidence.
+
+![alt text](image-8.png)
+(these are all previous tests except the new Greeting.test.js)
