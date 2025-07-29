@@ -23,6 +23,7 @@ const UserForm = () => {
     <form onSubmit={formik.handleSubmit} style={{ maxWidth: '400px', margin: 'auto' }}>
       <h2>Formik + Yup User Form</h2>
 
+      {/* Name Field */}
       <div style={{ marginBottom: '1rem' }}>
         <label htmlFor="name">Name:</label><br />
         <input
@@ -39,12 +40,13 @@ const UserForm = () => {
         )}
       </div>
 
+      {/* Email Field */}
       <div style={{ marginBottom: '1rem' }}>
         <label htmlFor="email">Email:</label><br />
         <input
           id="email"
           name="email"
-          type="email"
+          type="email"  // ✅ HTML5 validation
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.email}
@@ -55,7 +57,12 @@ const UserForm = () => {
         )}
       </div>
 
-      <button type="submit" style={{ padding: '8px 16px' }}>
+      {/* Submit Button */}
+      <button
+        type="submit"
+        disabled={!formik.isValid || !formik.dirty}  // ✅ Disabled if invalid or untouched
+        style={{ padding: '8px 16px', cursor: 'pointer' }}
+      >
         Submit
       </button>
     </form>
@@ -63,4 +70,3 @@ const UserForm = () => {
 };
 
 export default UserForm;
-
