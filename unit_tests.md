@@ -79,3 +79,42 @@ testapi.test.js for API function logic
 I pushed all working test files to GitHub. The testing setup is now complete and working reliably.
 
 ![alt text](image-1.png)
+
+# API Mocking and Async Testing – Reflection
+
+## Files Created for This Test
+
+- **src/api/getPost.js** – Axios-based API function that fetches a post
+- **src/components/PostViewer.js** – React component that calls `getPost` and renders the post
+- **src/components/PostViewer.test.js** – Jest test file that mocks the API and verifies UI behavior
+
+##  Why is it important to mock API calls in tests?
+
+Mocking API calls is crucial because:
+- It avoids making real HTTP requests during tests
+- It makes tests fast, consistent, and isolated from network issues
+- It allows you to test different API responses (e.g., success, failure, empty)
+- You can focus on the component's behavior — not the server
+
+Mocking is essential for **unit tests**, which should only test **one unit of logic at a time**.
+
+## ⚠️ Common Pitfalls When Testing Async Code
+
+1. **Not awaiting or waiting properly** – can cause `act()` warnings or missed assertions
+2. **Using `getByText()` when multiple matches exist** – leads to ambiguity errors
+3. **Forgetting to import `@testing-library/jest-dom`** – causes `.toBeInTheDocument()` to fail
+4. **Not using `jest.mock()` correctly for named exports**
+5. **Testing before React state updates are complete**
+
+I  resolved these issues by:
+- Using `screen.findByRole()` for specificity
+- Adding `import '@testing-library/jest-dom'`
+- Properly mocking `getPost` with:
+  ```js
+  jest.mock('../api/getPost', () => ({
+    getPost: jest.fn(),
+  }));
+
+✅ Test Result
+All tests passed successfully using mocked API data(these are all previous tests except the new counterSlice.test.js)
+![alt text](image-7.png)
