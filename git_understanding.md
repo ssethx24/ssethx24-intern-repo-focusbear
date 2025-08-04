@@ -315,7 +315,7 @@ As part of understanding Git workflows, I explored the impact of different style
 
 1. A vague message: `fixed stuff`
 2. An overly detailed message: a full paragraph explaining every line change
-3. A clear, well-structured message: `Fix header alignment issue on mobile layout`
+3. A clear, well-structured message: `Added changes on good git commit messages to the git markdown file`
 
 ---
 
@@ -326,6 +326,4 @@ A good commit message is:
 - **Concise but descriptive** — it should summarize the "what" and "why" of the change.
 - **Well-formatted** — typically starts with a capitalized verb in the imperative mood (e.g., "Add", "Fix", "Update").
 - **Helpful for future developers** — explaining the reason behind a change when it’s not obvious from the code.
-
-Good example:
 
