@@ -104,5 +104,17 @@ It’s best to resolve conflicts by carefully reviewing changes and combining th
 
 Regularly pulling changes and communicating with collaborators can help minimize the frequency of conflicts.
 
-✅ Successfully created, resolved, and learned from a merge conflict!
+Successfully created, resolved, and learned from a merge conflict!
 
+---
+
+## Why teams use branches instead of pushing directly to main
+
+### Why is pushing directly to main problematic?
+Pushing directly to `main` can lead to unstable or broken code if someone makes a mistake. It can also overwrite others’ work or make debugging harder. That’s why teams prefer to use separate branches for new features or bug fixes.
+
+### How do branches help with reviewing code?
+Branches let developers work on their changes separately. When they’re done, they can create a pull request or merge request. This lets others **review the code**, suggest changes, and ensure nothing breaks before it gets added to `main`.
+
+### What happens if two people edit the same file on different branches?
+Git will try to merge both changes. If they edit **different lines**, Git handles it automatically. But if they edit the **same lines**, a **merge conflict** happens. Developers will need to manually resolve it and choose which version to keep in the repository.
