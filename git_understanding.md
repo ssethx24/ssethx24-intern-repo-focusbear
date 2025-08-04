@@ -229,3 +229,81 @@ git log is your time machine.
 git blame is like Git detective mode.
 
 These tools are essential for collaborative projects where you need to move fast without losing control. I’ll be using them a lot more going forward!
+
+# Using `git bisect` for Debugging
+
+In this section, I explored the `git bisect` command, which is a powerful tool for debugging. It helps identify the exact commit that introduced a bug by using a binary search through the project's commit history.
+
+---
+
+## 🔍 What Does `git bisect` Do?
+
+`git bisect` performs a **binary search** over the commit history to find the exact commit that introduced a bug. You tell Git:
+
+- A **"good"** commit where things were working,
+- A **"bad"** commit where the bug exists.
+
+Git then checks out a midpoint commit between those two, and asks you to test it. Based on your feedback (`good` or `bad`), Git continues the search until it narrows down the faulty commit.
+
+This is incredibly useful when the bug was introduced somewhere in a long series of commits, and it's hard to eyeball the exact one manually.
+
+---
+
+## 🧪 Test Scenario
+
+### 1. **Set up commits**
+
+I created a file `math.js` and made the following commits:
+
+- ✅ Commit 1: Initial function returning `2 + 2`
+- ✅ Commit 2: Changed to `add(2, 2)` with correct implementation
+- ✅ Commit 3: Refactored add to a separate file
+- ❌ Commit 4: Accidentally changed `+` to `-`, introducing a bug
+- ✅ Commit 5: Added unrelated style change
+
+Now, calling `add(2, 2)` returns `0`, but I wasn’t sure which commit caused this.
+
+### 2. **Using `git bisect`**
+
+I ran the following in the CLI:
+
+```bash
+git bisect start
+git bisect bad        # current commit has the bug
+git bisect good <commit-hash-of-working-version>
+Git automatically checked out a middle commit. I tested the add function and reported it as good or bad with:
+
+bash
+git bisect good   # if the bug is not present
+git bisect bad    # if the bug is present
+After 2–3 steps, Git returned:
+
+sql
+<commit-hash> is the first bad commit
+That was the commit where I mistakenly changed + to -.
+
+3. Ending the bisect session
+bash
+git bisect reset
+This returned me to the original HEAD.
+
+🛠 When Would You Use This?
+When a bug is discovered but you're not sure when it was introduced.
+
+In large projects with dozens or hundreds of commits between releases.
+
+To avoid manually reading diffs and commit messages one by one.
+
+It is especially helpful when tests or behaviors are easy to check manually or via automated scripts.
+
+🔁 How It Compares to Manual Debugging
+Method	Pros	Cons
+Manual Review	Full control; detailed inspection	Time-consuming, easy to miss issues
+git bisect	Fast binary search (log₂(n))	Requires you to define test success/failure
+
+With git bisect, I didn’t have to understand or review every commit — just run a quick check at each midpoint and move on. In my case, I found the faulty commit in 3 steps, whereas manually reviewing 5 commits would have taken longer.
+
+🎯 Final Thoughts
+git bisect is like a debugging time machine with GPS. It makes the process of identifying regressions systematic and reliable, even in complex histories.
+
+I'll definitely be using this in real-world projects when bugs slip in over time and the cause isn’t immediately obvious.
