@@ -307,3 +307,25 @@ With git bisect, I didn’t have to understand or review every commit — just r
 git bisect is like a debugging time machine with GPS. It makes the process of identifying regressions systematic and reliable, even in complex histories.
 
 I'll definitely be using this in real-world projects when bugs slip in over time and the cause isn’t immediately obvious.
+
+
+# Reflections on Commit Message Best Practices
+
+As part of understanding Git workflows, I explored the impact of different styles of commit messages. I made three commits with varied messages:
+
+1. A vague message: `fixed stuff`
+2. An overly detailed message: a full paragraph explaining every line change
+3. A clear, well-structured message: `Fix header alignment issue on mobile layout`
+
+---
+
+## ✅ What Makes a Good Commit Message?
+
+A good commit message is:
+
+- **Concise but descriptive** — it should summarize the "what" and "why" of the change.
+- **Well-formatted** — typically starts with a capitalized verb in the imperative mood (e.g., "Add", "Fix", "Update").
+- **Helpful for future developers** — explaining the reason behind a change when it’s not obvious from the code.
+
+Good example:
+
