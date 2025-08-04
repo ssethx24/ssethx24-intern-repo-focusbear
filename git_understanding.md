@@ -118,3 +118,114 @@ Branches let developers work on their changes separately. When they’re done, t
 
 ### What happens if two people edit the same file on different branches?
 Git will try to merge both changes. If they edit **different lines**, Git handles it automatically. But if they edit the **same lines**, a **merge conflict** happens. Developers will need to manually resolve it and choose which version to keep in the repository.
+
+# Exploring Useful Git Commands
+
+In this section, I experimented with four important Git commands: `git checkout`, `git cherry-pick`, `git log`, and `git blame`. These are particularly useful in larger projects involving multiple developers and long-running branches.
+
+---
+
+## 1. `git checkout main -- <file>`
+
+### ✅ What It Does:
+This command **restores a specific file** from the `main` branch into your current working branch, without affecting any other files or changes.
+
+### 🧪 What I Did:
+I made a change in a file on a feature branch but then decided to discard those changes and use the version from `main`. I ran:
+
+```bash
+git checkout main -- sample.txt
+It successfully replaced only sample.txt with the version from main while keeping my other edits intact.
+
+📌 When to Use It:
+To undo changes to a single file without resetting the whole working directory.
+
+To selectively pull a clean version of a file from another branch.
+
+💡 What Surprised Me:
+It’s non-destructive and doesn’t require stashing or committing other changes — very handy in active development.
+
+2. git cherry-pick <commit>
+✅ What It Does:
+This command applies a single commit (or multiple specific commits) from another branch onto your current branch — without merging the full branch.
+
+🧪 What I Did:
+In my feature branch, I made multiple commits. I then switched to main and picked one of those commits using:
+
+bash
+Copy code
+git cherry-pick <commit-hash>
+Only that commit was applied to main, leaving out the rest of the branch’s changes.
+
+📌 When to Use It:
+To bring a bug fix or feature into another branch (like main or production) without merging unrelated work.
+
+For backporting fixes across versions.
+
+💡 What Surprised Me:
+Git even preserves the original commit message. It felt like copying-and-pasting just one piece of work into a new timeline.
+
+3. git log
+✅ What It Does:
+Displays the commit history, including author, timestamp, and message for each commit. It helps track the evolution of the repository.
+
+🧪 What I Did:
+I ran the basic command:
+
+bash
+Copy code
+git log
+Then tried enhancements:
+
+bash
+Copy code
+git log --oneline --graph --all
+Which gave me a visual representation of branches and merges.
+
+📌 When to Use It:
+To trace how a project has changed over time.
+
+To find commit hashes for cherry-picking or reverting.
+
+To debug when something was introduced.
+
+💡 What Surprised Me:
+The visual graph made it easy to understand branching. It’s much clearer than I expected — and helped me track merges and diverging work.
+
+4. git blame <file>
+✅ What It Does:
+Shows who last modified each line of a file and in which commit. Useful for tracking the origin of code.
+
+🧪 What I Did:
+I ran:
+
+bash
+Copy code
+git blame sample.txt
+This showed each line with commit hash, author, and date — very helpful for understanding file history.
+
+📌 When to Use It:
+To investigate who introduced a bug or a specific logic line.
+
+During code reviews when you need context or want to follow up with a contributor.
+
+💡 What Surprised Me:
+You can even narrow it down by line numbers:
+
+bash
+Copy code
+git blame -L 5,15 sample.txt
+This is great for large files — I didn't know this level of precision was available.
+
+🧠 Final Reflections
+Each of these commands gives you surgical control over your Git repository:
+
+git checkout helps restore files without disturbing the rest.
+
+git cherry-pick is perfect for selectively applying work.
+
+git log is your time machine.
+
+git blame is like Git detective mode.
+
+These tools are essential for collaborative projects where you need to move fast without losing control. I’ll be using them a lot more going forward!
