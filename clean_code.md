@@ -169,3 +169,63 @@ There were no distracting inconsistencies.
 💡 Final Thoughts
 Using ESLint with the Airbnb style guide, along with Prettier, helped enforce consistent, high-quality JavaScript code. I’ll continue using these tools in all future JavaScript projects for better collaboration and maintainability.
 
+# Reflections on Variable and Function Naming
+
+## 🧠 What Makes a Good Variable or Function Name?
+
+A good name should be:
+- **Descriptive and specific**: The name should clearly convey the purpose or content.
+- **Pronounceable and consistent**: Helps with team discussions and code review.
+- **Contextual**: The name should make sense within the scope and logic of the code.
+- **Concise but not vague**: Avoid overly short or cryptic names unless context makes them obvious (`i`, `j` in short loops are okay).
+
+For functions, names should clearly indicate what the function **does**, often starting with a verb (e.g., `calculateTotal`, `fetchUserData`).
+
+---
+
+## 🧪 Example of Poor Variable Naming
+
+Here’s an example of unclear code I wrote:
+
+```python
+def d(a, b):
+    c = a + b
+    return c * 0.1
+This function adds two values and returns 10% of the total — but from the names, it's impossible to tell what’s happening.
+
+✅ Refactored Version with Clear Names
+python
+Copy code
+def calculate_discounted_total(subtotal: float, tax: float) -> float:
+    """
+    Calculate 10% of the total price (e.g., for a discount or tax estimate).
+    """
+    total = subtotal + tax
+    return total * 0.1
+Improvements:
+calculate_discounted_total clearly describes what the function does.
+
+subtotal, tax, and total make it easy to understand the data flow.
+
+The docstring adds helpful context for future developers.
+
+⚠️ What Issues Can Arise from Poorly Named Variables?
+Confusion: Developers have to spend time understanding what a, b, or d mean.
+
+Errors: Misunderstanding a variable's purpose can lead to incorrect logic or use.
+
+Slower debugging: When something breaks, vague names make the issue harder to locate and fix.
+
+Reduced collaboration: Team members may hesitate to modify unclear code, fearing unintended side effects.
+
+👓 How Did Refactoring Improve Readability?
+After renaming the variables and function:
+
+The purpose of each value is immediately clear.
+
+I didn’t need to rely on mental notes or outside documentation.
+
+The code is now self-documenting, which reduces the need for comments and helps prevent bugs.
+
+💡 Final Thoughts
+Clear naming is one of the most powerful clean code practices. Unlike formatting tools (like Prettier), naming requires human judgment — but it pays off by making your code easier to read, debug, and collaborate on.
