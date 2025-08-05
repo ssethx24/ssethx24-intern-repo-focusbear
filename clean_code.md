@@ -377,3 +377,91 @@ Easier to test and reuse — logic and UI are now separated.
 
 💡 Final Thoughts
 Simplicity is about reducing moving parts without sacrificing clarity. Using tools like useSWR or custom hooks can help reduce boilerplate and make React components cleaner and more declarative.
+
+
+# Reflections on Writing Comments and Documentation
+
+## 🧠 Best Practices for Writing Comments
+
+Well-written comments and documentation **enhance clarity**, explain **why** something is done (not just what), and help future developers (or your future self) understand non-obvious logic.
+
+### ✅ Good Comments Should:
+- Explain the **intent** or **reasoning** behind complex code
+- Clarify **why** something exists (especially if it’s not obvious)
+- Document public APIs, functions, parameters, and return values
+- Highlight edge cases or workarounds
+
+### ❌ Avoid Comments That:
+- Simply restate what the code already clearly says
+- Become outdated or contradict the actual code
+- Are used to justify poor structure instead of refactoring
+
+---
+
+## 🧪 Poorly Commented Code Example
+
+```python
+# calculate total
+def calc(x, y):
+    return x + y  # add x and y
+What’s Wrong?
+The function and variable names are unclear.
+
+The comment is redundant and unhelpful (# add x and y tells us nothing more than the code does).
+
+It’s not documented what x and y actually represent.
+
+✅ Improved Code with Better Comments
+python
+Copy code
+def calculate_invoice_total(item_price: float, shipping_cost: float) -> float:
+    """
+    Calculate the final invoice total by adding item price and shipping cost.
+
+    Args:
+        item_price (float): The price of the purchased item.
+        shipping_cost (float): The cost to ship the item.
+
+    Returns:
+        float: The total amount to be paid.
+    """
+    return item_price + shipping_cost
+Why It’s Better:
+Function and variable names are self-explanatory.
+
+Docstring provides intent and usage.
+
+No need for redundant inline comments — the code documents itself.
+
+🕐 When Should You Add Comments?
+When the reason for code isn't obvious
+
+When implementing a complex algorithm
+
+When using a workaround or hack that needs future attention
+
+When documenting public APIs or libraries
+
+When collaborating in teams — comments explain why, not just what
+
+🚫 When Should You Avoid Comments?
+If the code can be made clearer through better naming or structure
+
+If the comment repeats the code line-for-line
+
+If it’s a placeholder for bad code (e.g., "# don't touch this")
+
+Instead of commenting unclear code like:
+
+python
+# loop over list and print each item
+for x in l:
+    print(x)
+Just improve the names:
+
+python
+for item in shopping_list:
+    print(item)
+
+💡 Final Thoughts
+Clean code speaks for itself. Comments should explain the intent, not repeat the implementation. If the code can be improved instead of commented, that’s the cleaner approach.
