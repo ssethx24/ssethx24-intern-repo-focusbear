@@ -465,3 +465,23 @@ for item in shopping_list:
 
 💡 Final Thoughts
 Clean code speaks for itself. Comments should explain the intent, not repeat the implementation. If the code can be improved instead of commented, that’s the cleaner approach.
+
+# Reflections on Function Clarity and Testing
+
+## ✅ What I Did
+
+- Refactored a simple `add(a, b)` function to include input validation.
+- Added proper JSDoc documentation to improve understanding and editor support.
+- Wrote a variety of tests using Jest to ensure the function behaves correctly and fails gracefully.
+
+---
+
+## 🧠 What I Learned
+
+- **Descriptive function names** and **clear parameter labels** improve readability significantly.
+- **JSDoc** not only helps document the function but also improves IDE auto-completion and onboarding.
+- **Input validation** in utility functions prevents silent bugs.
+- **Testing edge cases** (like negative numbers or invalid types) is crucial for reliable code.
+
+Clean, well-tested, and well-documented functions are easier to reuse, debug, and collaborate on.
+

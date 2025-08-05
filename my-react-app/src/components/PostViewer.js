@@ -1,21 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import PostViewer from './PostViewer';
 import { getPost } from '../api/getPost';
 
-function PostViewer() {
-  const [post, setPost] = useState(null);
+jest.mock('../api/getPost', () => ({
+  getPost: jest.fn(),
+}));
 
-  useEffect(() => {
-    getPost().then(setPost);
-  }, []);
+const mockPost = {
+  title: 'Test Post',
+  body: 'This is a test post body.',
+};
 
-  if (!post) return <p>Loading...</p>;
+beforeEach(() => {
+  getPost.mockResolvedValue(mockPost);
+});
 
-  return (
-    <div>
-      <h1>{post.title}</h1>
-      <p>{post.body}</p>
-    </div>
-  );
-}
+test('renders fetched post title and body', async () => {
+  render(<PostViewer />);
 
-export default PostViewer;
+  const { title, body } = mockPost;
+
+  // Use role and text-based queries
+  const heading = await screen.findByRole('heading', { name: new RegExp(title, 'i') });
+  const bodyText = await screen.findByText(new RegExp(body, 'i'));
+
+  expect(heading).toBeInTheDocument();
+  expect(bodyText).toBeInTheDocument();
+});
