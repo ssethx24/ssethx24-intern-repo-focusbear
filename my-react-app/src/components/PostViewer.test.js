@@ -8,18 +8,25 @@ jest.mock('../api/getPost', () => ({
   getPost: jest.fn(),
 }));
 
-test('renders fetched post title and body', async () => {
-  getPost.mockResolvedValue({
-    title: 'Test Post',
-    body: 'This is a test post body.',
-  });
+const mockPost = {
+  title: 'Test Post',
+  body: 'This is a test post body.',
+};
 
+beforeEach(() => {
+  getPost.mockResolvedValue(mockPost);
+});
+
+test('renders fetched post title and body', async () => {
   render(<PostViewer />);
 
-  // Use more specific role-based queries
-  const heading = await screen.findByRole('heading', { name: /Test Post/i });
-  const body = await screen.findByText(/This is a test post body/i);
+  const { title, body } = mockPost;
+
+  // Use role and text-based queries
+  const heading = await screen.findByRole('heading', { name: new RegExp(title, 'i') });
+  const bodyText = await screen.findByText(new RegExp(body, 'i'));
 
   expect(heading).toBeInTheDocument();
-  expect(body).toBeInTheDocument();
+  expect(bodyText).toBeInTheDocument();
 });
+

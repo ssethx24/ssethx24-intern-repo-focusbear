@@ -229,3 +229,45 @@ The code is now self-documenting, which reduces the need for comments and helps 
 
 💡 Final Thoughts
 Clear naming is one of the most powerful clean code practices. Unlike formatting tools (like Prettier), naming requires human judgment — but it pays off by making your code easier to read, debug, and collaborate on.
+
+# Reflections on the DRY Principle
+
+## 🔁 What Is the DRY Principle?
+
+**DRY** stands for “Don’t Repeat Yourself.” It emphasizes avoiding redundant code by centralizing logic, data, or patterns that are used multiple times.
+
+Repetition in code increases the risk of bugs, makes updates harder, and clutters test readability. DRY code is easier to maintain and understand.
+
+---
+
+## 🔍 What Was Repetitive?
+
+In my unit test for the `PostViewer` component, I found the following issues:
+
+- The same `title` and `body` values were written in multiple places — in the mock and again in test assertions.
+- Repetitive setup logic (`getPost.mockResolvedValue(...)`) was inside the test block, even though it applied to all tests.
+
+---
+
+## 🧼 How I Refactored It
+
+I:
+- Defined a single `mockPost` object for reuse.
+- Used object destructuring to keep the test assertions clean.
+- Moved mock setup into a `beforeEach()` block to reduce redundancy.
+
+---
+
+## ✅ How Refactoring Helped
+
+- The code is **easier to read** because the intent stands out more clearly.
+- I can now **update the mock data in one place**, and the test stays consistent.
+- It's **easier to reuse** the mockPost in other tests (e.g., error handling, loading states).
+- The structure is more scalable for future additions.
+
+---
+
+## 🧠 Final Thought
+
+Even though the test was working, applying DRY made it more **elegant, robust, and maintainable**. Clean code isn’t just about what works — it’s about what lasts.
+
