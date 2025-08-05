@@ -327,3 +327,57 @@ A good commit message is:
 - **Well-formatted** — typically starts with a capitalized verb in the imperative mood (e.g., "Add", "Fix", "Update").
 - **Helpful for future developers** — explaining the reason behind a change when it’s not obvious from the code.
 
+
+# Reflections on Pull Requests (PRs)
+
+## 🔄 What is a Pull Request?
+
+A Pull Request (PR) is a GitHub feature that allows contributors to **propose changes** to a codebase. It initiates a discussion around the changes, enabling others to review, comment, and approve before merging.
+
+PRs are a critical part of collaborative software development workflows, especially in teams and open-source projects.
+
+---
+
+## ✅ Why Are PRs Important in Team Workflows?
+
+- **Code Review**: PRs allow peers or leads to review changes for correctness, style, and impact.
+- **Quality Control**: PRs help catch bugs, logic errors, or security flaws before code is merged.
+- **Documentation**: A well-written PR shows *why* a change was made, not just *what* was changed.
+- **Accountability**: Changes are tracked clearly, and discussions are archived for future reference.
+
+---
+
+## 🧱 What Makes a Well-Structured PR?
+
+- A clear and descriptive **title** (e.g., `Fix login bug on mobile view`).
+- A meaningful **description** that explains:
+  - What was changed
+  - Why it was changed
+  - How to test it (if applicable)
+- Linked **issues** (e.g., `Closes #12`) to track progress
+- Small, focused changes rather than large unrelated edits
+- Proper formatting and passing CI checks (if any)
+
+---
+
+## 🔍 What I Learned from Reviewing an Open-Source PR
+
+I reviewed a PR in the [React GitHub repo](https://github.com/facebook/react/pulls). I noticed:
+
+- PRs are often linked to formal issues or discussions.
+- Contributors use checklists, test plans, and summaries.
+- Reviewers leave **constructive feedback** (e.g., suggest renaming variables, reordering logic).
+- PRs may go through several rounds before approval.
+- Reviewers often comment with links to relevant documentation or previous PRs for context.
+
+This showed me that **PRs are not just a code tool but a communication and collaboration platform**.
+
+---
+
+## 🤝 Final Thoughts
+
+I created a new branch, made a small change, and opened a PR with a clear message. I requested feedback, reviewed an open-source PR, and finally merged mine after testing.
+
+This experience helped me understand the power of PRs in improving code quality and facilitating teamwork — even in small personal projects.
+
+✅ PR created, reviewed, merged, and branch deleted.
