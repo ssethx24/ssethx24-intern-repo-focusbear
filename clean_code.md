@@ -507,6 +507,6 @@ These gaps could produce silent failures, confusing errors, or hard-to-debug beh
 Overall, the refactor makes the function safer, easier to maintain, and more predictable for callers.
 
 
-Link to the math.js file: my-react-app\src\utils\math.js  
+Link to the math.js file: my-react-app\src\utils\math.js  (find attached) 
 
 (Commented code is the original code while the refactored code is the actual one)
