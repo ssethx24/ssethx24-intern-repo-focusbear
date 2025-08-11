@@ -485,3 +485,28 @@ Clean code speaks for itself. Comments should explain the intent, not repeat the
 
 Clean, well-tested, and well-documented functions are easier to reuse, debug, and collaborate on.
 
+
+
+# clean_code.md — Error Handling & Guard Clauses
+
+## What was the issue with the original code?
+The original `add(a, b)` only checked `typeof` for both parameters and returned `a + b`. This missed several edge cases:
+- It didn’t enforce that **two arguments** are provided.
+- It allowed `NaN` and `Infinity` because `typeof NaN === 'number'` and `typeof Infinity === 'number'`.
+- It provided a **vague error message** that didn’t say which argument was wrong or what types were received.
+- It didn’t verify that the **result** itself was finite (overflow could slip through).
+
+These gaps could produce silent failures, confusing errors, or hard-to-debug behavior downstream.
+
+## How does handling errors improve reliability?
+- **Guard clauses** fail fast at the top with clear, specific messages. This keeps the happy path linear and easy to read while preventing invalid states from entering the core logic.
+- **Semantic validation** (e.g., `Number.isFinite`) catches cases that basic type checks miss (`NaN`, `Infinity`), which are common sources of subtle bugs.
+- **Specific error types/messages** help consumers of the function handle failures predictably and debug quickly.
+- **Post-conditions** (checking the result is finite) ensure we don’t return unusable values, increasing robustness in numerical code.
+
+Overall, the refactor makes the function safer, easier to maintain, and more predictable for callers.
+
+
+Link to the math.js file: my-react-app\src\utils\math.js  
+
+(Commented code is the original code while the refactored code is the actual one)
