@@ -122,3 +122,26 @@ You need to manage controlled inputs properly to avoid React warnings.
 
 Screenshot for evidence 
 ![alt text](image-28.png)
+
+Question: What happens if we modify state directly instead of using setState?
+
+Commit: 93ed58c7e59e1803e72d7f6af707b17b53a4b116
+Files Changed:
+
+src/components/Counter.js (modified to use useState instead of Redux as done in earlier task)
+
+Question: What happens if we modify state directly instead of using setState?
+
+Answer:
+In React, state is immutable and should never be changed directly.
+If we modify state directly (e.g., count++), React does not detect the change and will not re-render the component, leaving the UI stale and out of sync with the actual data.
+
+The correct approach is to use the updater function returned by useState (e.g., setCount(prev => prev + 1)). This tells React that the state has changed and triggers a re-render with the new value.
+
+Risks of modifying state directly:
+
+No UI update since React didn’t detect a state change.
+
+Possible stale or incorrect values due to React’s batching of updates.
+
+Breaks the predictable state flow in React, making debugging harder.
