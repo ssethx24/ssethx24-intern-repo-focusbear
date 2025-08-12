@@ -32,3 +32,7 @@ NOTE: My application is in my-react-app folder.
 A **detailed `README.md`** with setup steps and screenshot evidence is located at:  
 
 C:\Users\shaur\Desktop\Focus Bear Repo Intern\ssethx24-intern-repo-focusbear\README.md 
+![
+](image-21.png)
+
+Screenshot showing Tailwind is working
