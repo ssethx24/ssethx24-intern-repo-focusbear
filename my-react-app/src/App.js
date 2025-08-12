@@ -11,6 +11,10 @@ import UseCallbackDemo from './hooks-demo/UseCallbackDemo';
 import UseMemoDemo from './hooks-demo/UseMemoDemo';
 import UseEffectDemo from './hooks-demo/UseEffectDemo';
 
+// 👇 Redux demo components
+import Counter from './components/Counter';
+import CounterMessage from './components/CounterMessage';
+
 // ---- Home page (your existing content) ----
 function HomePage() {
   const [apiResponse, setApiResponse] = useState(null);
@@ -81,6 +85,13 @@ function HomePage() {
       <section style={{ marginTop: '2rem' }}>
         <h2>useEffect demo</h2>
         <UseEffectDemo />
+      </section>
+
+      {/* 🔥 Redux Toolkit demo (added) */}
+      <section style={{ marginTop: '2rem' }}>
+        <h2>Redux Toolkit demo</h2>
+        <Counter />
+        <CounterMessage />
       </section>
     </main>
   );
