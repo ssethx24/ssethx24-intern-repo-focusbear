@@ -5,6 +5,7 @@ import UserForm from './components/UserForm';
 import { testPostRequest } from './api/testapi';
 import { useTranslation, Trans } from 'react-i18next';
 import UseCallbackDemo from './hooks-demo/UseCallbackDemo';
+import UseMemoDemo from './hooks-demo/UseMemoDemo';
 
 export default function App() {
   const [apiResponse, setApiResponse] = useState(null);
@@ -15,7 +16,6 @@ export default function App() {
 
   useEffect(() => {
     const params = { title: 'foo', body: 'bar', userId: 1 };
-
     testPostRequest(params)
       .then(data => setApiResponse(data))
       .catch(err => console.error('API error:', err));
@@ -25,7 +25,10 @@ export default function App() {
     i18n.changeLanguage(lang);
   };
 
-  console.log('UseCallbackDemo typeof:', typeof UseCallbackDemo);
+  // quick sanity logs (optional)
+  // console.log('UseCallbackDemo typeof:', typeof UseCallbackDemo);
+  // console.log('UseMemoDemo typeof:', typeof UseMemoDemo);
+
   return (
     <main style={{ fontFamily: 'system-ui', padding: '2rem' }}>
       {/* i18next translation examples */}
@@ -63,7 +66,14 @@ export default function App() {
 
       {/* useCallback demo */}
       <section style={{ marginTop: '2rem' }}>
+        <h2>useCallback demo</h2>
         <UseCallbackDemo />
+      </section>
+
+      {/* useMemo demo */}
+      <section style={{ marginTop: '2rem' }}>
+        <h2>useMemo demo</h2>
+        <UseMemoDemo />
       </section>
     </main>
   );
