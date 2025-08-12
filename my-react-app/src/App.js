@@ -1,5 +1,7 @@
 // src/App.js
 import { useEffect, useState } from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+
 import HelloWorld from './components/HelloWorld';
 import UserForm from './components/UserForm';
 import { testPostRequest } from './api/testapi';
@@ -9,7 +11,8 @@ import UseCallbackDemo from './hooks-demo/UseCallbackDemo';
 import UseMemoDemo from './hooks-demo/UseMemoDemo';
 import UseEffectDemo from './hooks-demo/UseEffectDemo';
 
-export default function App() {
+// ---- Home page (your existing content) ----
+function HomePage() {
   const [apiResponse, setApiResponse] = useState(null);
   const { t, i18n } = useTranslation();
 
@@ -23,9 +26,7 @@ export default function App() {
       .catch((err) => console.error('API error:', err));
   }, []);
 
-  const changeLanguage = (lang) => {
-    i18n.changeLanguage(lang);
-  };
+  const changeLanguage = (lang) => i18n.changeLanguage(lang);
 
   return (
     <main style={{ fontFamily: 'system-ui', padding: '2rem' }}>
@@ -84,3 +85,31 @@ export default function App() {
     </main>
   );
 }
+
+// ---- Simple Profile page ----
+function ProfilePage() {
+  return (
+    <main style={{ fontFamily: 'system-ui', padding: '2rem' }}>
+      <h1>Profile</h1>
+      <p>This is your profile page. Add details later.</p>
+    </main>
+  );
+}
+
+// ---- App shell: nav + routes (BrowserRouter is in index.js) ----
+export default function App() {
+  return (
+    <>
+      <nav style={{ display: 'flex', gap: 12, padding: '12px 16px', borderBottom: '1px solid #eee' }}>
+        <Link to="/">Home</Link>
+        <Link to="/profile">Profile</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+      </Routes>
+    </>
+  );
+}
+
