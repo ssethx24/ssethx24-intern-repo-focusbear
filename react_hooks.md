@@ -58,6 +58,42 @@ It **stabilizes function identity** across renders so memoized children don’t 
 
 Pls find ss attached for reference. 
 ![alt text](image-22.png)
----
-
 Commit ID: 8717ddf92ff95a773ba60f7ce5e86fd868f83d5a 
+-----
+
+📄 Reflection – useMemo Hook
+Commit ID: be5aa4434597199efd9eaa069f9d99f4f88b9a1a
+Files added in this commit:
+
+my-react-project/src/App.js — Integrated both UseCallbackDemo and UseMemoDemo into the main app.
+
+my-react-project/src/hooks-demo/UseMemoDemo.js — Demonstrates expensive calculation optimized with useMemo.
+
+1. How does useMemo improve performance?
+useMemo stores (memoizes) the result of an expensive calculation and only recalculates it when its dependencies change.
+
+In UseMemoDemo, the expensiveCalculation(count) function loops over a large range.
+With useMemo, this loop only runs when count changes — so unrelated state updates like theme toggling don’t trigger the heavy computation.
+
+2. When should you avoid using useMemo?
+Avoid useMemo when:
+
+The computation is fast and not resource-intensive.
+
+Component re-renders infrequently.
+
+The caching overhead outweighs the benefit.
+
+The logic is simple and doesn't impact performance.
+
+3. What happens if you remove useMemo?
+Without useMemo:
+
+The expensive calculation will run on every render — even when changes are unrelated to the computed value.
+
+This increases CPU usage and slows down rendering.
+
+The UI may feel less responsive if the calculation is complex.
+
+Screenshot for evidence:
+![alt text](image-23.png)
