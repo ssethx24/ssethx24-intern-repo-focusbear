@@ -97,3 +97,41 @@ The UI may feel less responsive if the calculation is complex.
 
 Screenshot for evidence:
 ![alt text](image-23.png)
+
+📄 Reflection: useEffect Hook
+Commit ID: 1250b379db4ba9a99da70eb2cf62b237dcbfddeb
+Files Created/Modified:
+
+src/hooks-demo/UseEffectDemo.js – new component demonstrating useEffect usage.
+
+src/App.js – updated to include UseEffectDemo.
+
+When should you use useEffect instead of handling logic inside event handlers?
+You should use useEffect when you need to perform side effects that should run automatically when a component mounts, unmounts, or when certain state/props change.
+Event handlers should be used when the logic should only run after explicit user interaction.
+
+Example:
+
+✅ useEffect: Fetch data when the component first loads.
+
+✅ Event handler: Fetch data only when a "Load Data" button is clicked.
+
+What happens if you don’t provide a dependency array?
+If no dependency array is provided, the effect will run after every render, regardless of whether the relevant data changed.
+This can cause:
+
+Unnecessary API calls
+
+Infinite loops (if state is updated inside the effect)
+
+Reduced performance
+
+How can improper use of useEffect cause performance issues?
+Unnecessary re-runs: Forgetting dependencies can cause repeated execution of expensive logic.
+
+Memory leaks: Not cleaning up subscriptions, timers, or listeners can cause the app to consume more memory over time.
+
+Infinite loops: Incorrectly updating state inside the effect without proper dependencies can cause the component to re-render endlessly.
+
+Screenshot for evidence:
+![alt text](image-24.png)
