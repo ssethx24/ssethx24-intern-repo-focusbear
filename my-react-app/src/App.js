@@ -4,7 +4,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 
 import HelloWorld from './components/HelloWorld';
 import UserForm from './components/UserForm';
-import SimpleForm from './components/SimpleForm'; // 👈 added
+import SimpleForm from './components/SimpleForm';
 
 import { testPostRequest } from './api/testapi';
 import { useTranslation, Trans } from 'react-i18next';
@@ -13,9 +13,13 @@ import UseCallbackDemo from './hooks-demo/UseCallbackDemo';
 import UseMemoDemo from './hooks-demo/UseMemoDemo';
 import UseEffectDemo from './hooks-demo/UseEffectDemo';
 
-// 👇 Redux demo components
+// Redux demo components
 import Counter from './components/Counter';
 import CounterMessage from './components/CounterMessage';
+
+// Debugging practice components
+import BuggyCounter from './bugs/BuggyCounter';
+import FixedCounter from './fixed/FixedCounter';
 
 // ---- Home page (your existing content) ----
 function HomePage() {
@@ -95,7 +99,24 @@ function HomePage() {
         <SimpleForm />
       </section>
 
-      {/* 🔥 Redux Toolkit demo */}
+      {/* Debugging practice: Buggy vs Fixed counters */}
+      <section
+        style={{
+          marginTop: '2rem',
+          display: 'grid',
+          gap: '1rem',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+        }}
+      >
+        <div>
+          <BuggyCounter />
+        </div>
+        <div>
+          <FixedCounter />
+        </div>
+      </section>
+
+      {/* Redux Toolkit demo */}
       <section style={{ marginTop: '2rem' }}>
         <h2>Redux Toolkit demo</h2>
         <Counter />
@@ -131,4 +152,5 @@ export default function App() {
     </>
   );
 }
+
 
