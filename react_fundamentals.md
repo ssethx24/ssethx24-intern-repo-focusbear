@@ -35,4 +35,50 @@ C:\Users\shaur\Desktop\Focus Bear Repo Intern\ssethx24-intern-repo-focusbear\REA
 ![
 ](image-21.png)
 
-Screenshot showing Tailwind is working
+Screenshot showing Tailwind is working. Commit ID: ad196f6eb74c63eab235b6a3a88055c6868ccdc4 
+
+Reflection – React Router Setup
+Commit ID: 384c75f80fd3e6fdee13d3ce309e9bffaef7a0e9
+
+Files Created / Modified
+src/index.js –
+
+Wrapped the <App /> component with <BrowserRouter> from react-router-dom to provide routing context.
+
+This ensures that <Link> and <Routes> inside App.js work without errors.
+
+src/App.js –
+
+Added navigation links using <Link> from react-router-dom.
+
+Added <Routes> with <Route> components for two pages: Home and Profile.
+
+Integrated routing with your existing i18n, hooks demos (useCallback, useMemo, useEffect), and API demo.
+
+src/pages/Home.js (new) –
+
+Created a simple Home page component for routing demonstration.
+
+src/pages/Profile.js (new) –
+
+Created a simple Profile page component for routing demonstration.
+
+What are the advantages of client-side routing?
+Faster navigation –
+Pages load instantly without a full server request; only the changed UI is rendered.
+
+Smooth user experience –
+No page refresh flicker, keeping state (like form inputs) intact between navigations.
+
+Reduced server load –
+Since navigation happens in the browser, the server doesn’t need to re-render the whole page on each route change.
+
+More control over transitions & state –
+You can manage animations, preserve component state, and fetch data only when necessary.
+
+Single Page Application (SPA) benefits –
+Allows building apps that feel like native applications with dynamic content updates.
+
+screenshots for evidence:
+Home page: ![alt text](image-25.png)
+Profile page: ![alt text](image-26.png)
