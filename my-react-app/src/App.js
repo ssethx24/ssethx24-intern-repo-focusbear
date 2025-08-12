@@ -4,6 +4,8 @@ import { Routes, Route, Link } from 'react-router-dom';
 
 import HelloWorld from './components/HelloWorld';
 import UserForm from './components/UserForm';
+import SimpleForm from './components/SimpleForm'; // 👈 added
+
 import { testPostRequest } from './api/testapi';
 import { useTranslation, Trans } from 'react-i18next';
 
@@ -87,7 +89,13 @@ function HomePage() {
         <UseEffectDemo />
       </section>
 
-      {/* 🔥 Redux Toolkit demo (added) */}
+      {/* Form List Demo */}
+      <section style={{ marginTop: '2rem' }}>
+        <h2>Form List Demo</h2>
+        <SimpleForm />
+      </section>
+
+      {/* 🔥 Redux Toolkit demo */}
       <section style={{ marginTop: '2rem' }}>
         <h2>Redux Toolkit demo</h2>
         <Counter />
