@@ -1,10 +1,10 @@
 // src/App.js
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import HelloWorld from './components/HelloWorld';
 import UserForm from './components/UserForm';
 import { testPostRequest } from './api/testapi';
 import { useTranslation, Trans } from 'react-i18next';
-import LanguageSwitcher from './LanguageSwitcher';
+import UseCallbackDemo from './hooks-demo/UseCallbackDemo';
 
 export default function App() {
   const [apiResponse, setApiResponse] = useState(null);
@@ -25,6 +25,7 @@ export default function App() {
     i18n.changeLanguage(lang);
   };
 
+  console.log('UseCallbackDemo typeof:', typeof UseCallbackDemo);
   return (
     <main style={{ fontFamily: 'system-ui', padding: '2rem' }}>
       {/* i18next translation examples */}
@@ -43,9 +44,6 @@ export default function App() {
         <button onClick={() => changeLanguage('es')} style={{ marginLeft: '0.5rem' }}>🇪🇸 Español</button>
       </div>
 
-      {/* OR use separate component */}
-      {/* <LanguageSwitcher /> */}
-
       {/* Existing HelloWorld component */}
       <section style={{ marginTop: '2rem' }}>
         <HelloWorld name="Focus Bear" />
@@ -61,6 +59,11 @@ export default function App() {
       <section style={{ marginTop: '2rem' }}>
         <h2>{t('apiResponse')}</h2>
         <pre>{apiResponse ? JSON.stringify(apiResponse, null, 2) : 'Loading...'}</pre>
+      </section>
+
+      {/* useCallback demo */}
+      <section style={{ marginTop: '2rem' }}>
+        <UseCallbackDemo />
       </section>
     </main>
   );
