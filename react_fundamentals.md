@@ -82,3 +82,43 @@ Allows building apps that feel like native applications with dynamic content upd
 screenshots for evidence:
 Home page: ![alt text](image-25.png)
 Profile page: ![alt text](image-26.png)
+
+📄 Reflection — react_fundamentals.md
+Commit ID: a0117c6aefa721871adae95d1cf422f1217949d4
+Files in: my-react-app folder
+
+Topic: Common issues when working with lists in React
+When working with lists in React, some common issues include:
+
+Missing or duplicate keys
+
+Every element in a list needs a unique key prop so React can efficiently track changes.
+
+Using array indexes as keys can cause problems when the list changes order or items are added/removed.
+
+Unnecessary re-renders
+
+If list items re-render even when data hasn’t changed, performance can drop, especially with large lists.
+
+This can be avoided by memoizing components or ensuring stable references.
+
+Mutating state directly
+
+Directly modifying the array in state (e.g., array.push()) won’t trigger a re-render.
+
+Instead, always create a new array (e.g., [...array, newItem]) before setting state.
+
+Performance with large lists
+
+Large lists can slow rendering; techniques like virtualization (react-window, react-virtualized) help.
+
+Controlled vs uncontrolled inputs in lists
+
+When a list contains input fields, keeping their state in sync can be tricky.
+
+You need to manage controlled inputs properly to avoid React warnings.
+
+✅ This reflection corresponds to the changes made in src/App.js and the newly added src/components/SimpleForm.js in commit a0117c6aefa721871adae95d1cf422f1217949d4.
+
+Screenshot for evidence 
+![alt text](image-28.png)
