@@ -49,3 +49,48 @@ Message correctly updates to "Back to zero. (even)" because the selector value i
 Counter increments/decrements both synchronously and asynchronously.
 
 Message dynamically updates for odd/even values and zero.
+
+
+
+Commit ID: d281929b04b4210e57e34e40df5e6ca4ddd3f002
+
+Files Created/Modified:
+
+src/store/store.js — Configured Redux store using configureStore from Redux Toolkit.
+
+src/store/counterSlice.js — Created counter slice with increment and decrement reducers.
+
+src/components/Counter.js — Connected to Redux store using useSelector and useDispatch.
+
+src/index.js — Wrapped <App /> with <Provider store={store}> to give Redux context to the app.
+
+Task Summary
+Installed Redux Toolkit (@reduxjs/toolkit) and React Redux (react-redux).
+
+Created a Redux store with a counter slice.
+
+Used useSelector to read counter.value from Redux state in Counter.js.
+
+Used useDispatch to send increment and decrement actions to Redux.
+
+Pushed setup to GitHub.
+
+Reflection Question:
+When should you use Redux instead of useState?
+
+Answer:
+You should use Redux when:
+
+State needs to be shared across multiple components – If several unrelated components need the same data, Redux centralizes it, preventing prop-drilling.
+
+Complex state management – If state has multiple nested values, complex updates, or needs middleware for async logic (like API calls).
+
+Predictable and traceable updates – Redux’s single source of truth and action-based updates make debugging and logging easier.
+
+Scalability – In large applications, Redux helps organize and maintain state over time.
+
+You should prefer useState for:
+
+Local state that is only relevant to a single component.
+
+Simple scenarios where adding Redux would add unnecessary complexity.
