@@ -51,13 +51,18 @@ For me, **daily stand-ups** are the most important. As a front-end developer int
 ---
 
 ## My Observations
+My Observations
+Attended: Daily Stand-up – 12 August 2025
+Yesterday’s stand-up (12 Aug) was led by Jeremy. He asked everyone for updates on their progress with induction tasks and also shared information about upcoming events. Each team member gave a brief progress update, with some noting they were continuing with existing tasks. I shared my own current status, and one teammate flagged a small delay due to onboarding tool access.
 
-### Attended: Daily Stand-up
-I observed how team members quickly shared progress and blockers. It was efficient and helped clarify who was working on what. Even a quick “I’m still working on the same task” gave visibility and context.
+Jeremy opened the session by saying:
 
-### Reviewed: Retrospective Notes
+"Alright team, let’s start with a quick round — where are we on our induction tasks, and is there anything blocking you? Also, I’ll run through some upcoming events at the end."
+
+The session was quick but covered all essentials, ensuring everyone stayed aligned.
+
+Reviewed: Retrospective Notes
 I read notes from a recent retrospective. The team discussed a UI bug that was missed during hand-off. One key takeaway was improving collaboration between devs and designers before marking tasks as "done".
-
 ---
 
 ## My Collaboration Improvement
