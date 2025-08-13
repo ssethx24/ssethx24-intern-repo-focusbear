@@ -151,3 +151,29 @@ No UI update since React didn’t detect a state change.
 Possible stale or incorrect values due to React’s batching of updates.
 
 Breaks the predictable state flow in React, making debugging harder.
+
+#Advantages of using Tailwind CSS
+
+Rapid development – Style directly in JSX without switching to a CSS file.
+
+Consistent design system – Built-in spacing, color, and typography scales ensure uniform styles.
+
+Responsive & state styling inline – Easily add hover:, focus:, active:, sm:, md: directly on elements.
+
+Smaller production bundle – JIT mode purges unused classes.
+
+Centralized customization – All design tokens live in tailwind.config.js.
+
+Potential pitfalls
+
+Long, cluttered class strings – JSX can become hard to read without extracting components.
+
+Learning curve – Remembering utility names and scales takes time.
+
+Risk of style duplication – Repeating the same utility sets across files instead of abstracting.
+
+Design drift – Ad-hoc colors or values can break consistency.
+
+Build dependency – Requires Tailwind/PostCSS setup, which adds a build step.
+
+Screenshot of 
