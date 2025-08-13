@@ -56,4 +56,18 @@ It might seem like a small thing at first, but these time-savers add up quickly.
 
 Over time, I have realised that they let me focus more on the code and less on navigating the tools.
 
- 
+
+Evidence (with screenshot)
+
+![alt text](image-41.png)
+
+The GitHub repo name (ssethx24-intern-repo-focusbear).
+
+The file name (vs_code_productivity.md).
+
+The file contents in preview mode, proving it’s in your public repo.
+
+
+Here’s my public repo link: https://github.com/ssethx24/ssethx24-intern-repo-focusbear
+Attached is a screenshot showing the file in my repo.
+
