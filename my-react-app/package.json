@@ -24,13 +24,28 @@
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-react": "^7.37.5",
     "globals": "^16.3.0",
-    "prettier": "^3.6.2"
+    "prettier": "^3.6.2",
+    "markdownlint-cli2": "^0.8.1",
+    "cspell": "^8.14.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.10"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "mlint": "markdownlint-cli2 **/*.md",
+    "spell": "cspell \"**/*.{md,mdx}\"",
+    "check:docs": "npm run mlint && npm run spell",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{md,mdx}": [
+      "markdownlint-cli2",
+      "cspell --no-progress",
+      "git add"
+    ]
   },
   "eslintConfig": {
     "extends": [
