@@ -1,3 +1,5 @@
+#Understanding Components & Props
+
 ### Reflection: Why are components important in React?
 
 Components are important in React because they let you split your user interface into smaller, reusable parts. 
@@ -6,10 +8,14 @@ Instead of working with one big file, you can build your app from simple buildin
 
 Overall, using components helps keep your project organized and makes it easier to build and maintain even as the app grows. 
 
-NOTE: My application is in my-react-app folder. 
+NOTE: My application is in my-react-app folder.
 
-![alt text](image.png)
+![alt text](image-37.png) - Image showing my-react-app showing Hello Focus bear is rendered!!
 (This is how it looks like)
+![alt text](image-38.png)
+This annotated code screenshot – showing { name } in use.
+Commit id: 75fe81a5a83a13709face6a1451e95cbb7ea1ca7
+
 
 # react_fundamentals.md — Tailwind Setup Reflection
 
