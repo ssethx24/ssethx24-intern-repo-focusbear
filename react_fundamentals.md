@@ -176,4 +176,7 @@ Design drift – Ad-hoc colors or values can break consistency.
 
 Build dependency – Requires Tailwind/PostCSS setup, which adds a build step.
 
-Screenshot of 
+Screenshot of component styled with tailwind css 
+
+b6bc1ea102b994d16d06b5083ea35e491c588f88 commit id 
+![alt text](image-53.png)
