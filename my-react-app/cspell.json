@@ -1,0 +1,21 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "language": "en",
+  "ignorePaths": [
+    "node_modules",
+    "package-lock.json",
+    ".git",
+    ".husky",
+    "dist",
+    "build"
+  ],
+  "words": [
+    "FocusBear",
+    "markdownlint",
+    "CI/CD",
+    "VSCode",
+    "precommit",
+    "Changelog"
+  ]
+}
