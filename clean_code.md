@@ -510,3 +510,30 @@ Overall, the refactor makes the function safer, easier to maintain, and more pre
 Link to the math.js file: my-react-app\src\utils\math.js  (find attached) 
 
 (Commented code is the original code while the refactored code is the actual one)
+
+
+## Unit Testing – Research & Reflection
+
+**Why unit testing matters (research):**  
+Unit tests give fast, repeatable feedback at the function level. They prevent regressions, document expected behavior, enable safe refactors, and raise design quality (small, pure, single-purpose functions are easier to test). A healthy test suite shortens debugging time and increases confidence in changes.
+
+**Framework chosen:**  
+I used **Jest** (JavaScript) because it’s zero-config for React/Node projects, has a built-in runner/assertions/mocks, and works well with Babel/TS and watch mode.
+
+**How unit tests help keep code clean:**  
+- Force **clear inputs/outputs** and push code toward **single responsibility**.  
+- Encourage **pure functions** with fewer hidden dependencies.  
+- Act as **living documentation** for edge cases and business rules.  
+- Make **refactoring safer**—failures reveal behavior changes immediately.
+
+**What issues I found while testing:**  
+- My original `add(a, b)` accepted `NaN`/`Infinity` because `typeof NaN === 'number'`.  
+- Missing argument handling wasn’t explicit (calling `add(5)` behaved oddly).  
+- I added guard clauses using `Number.isFinite` and explicit arity checks; tests caught these cases and now the function fails fast with clear messages.
+
+
+Link to the test file: my-react-app\src\utils\math.test.js
+Link for the file for which test was written: my-react-app/src/utils/math.js
+
+Screenshot of the unit test
+![alt text](image-42.png)
