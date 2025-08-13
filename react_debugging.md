@@ -69,3 +69,31 @@ This screenshot shows the Sources panel in Chrome DevTools with a breakpoint set
 The breakpoint is placed at the start of the HelloWorld function so execution will pause before the useTranslation() hook is called.
 
 This allows me to inspect variables in the scope, step through the function, and verify that the name prop and translation function are working correctly.
+
+
+
+Debugging Story – Missing Prop in HelloWorld Component
+While testing my multilingual React app, I noticed that the greeting displayed as "Hello, !" instead of showing the user’s name. This suggested that the name prop in my HelloWorld component was either empty or missing.
+
+Step 1 – Inspecting with React DevTools
+I opened React DevTools → Components tab (as shown in my first screenshot) and selected the HelloWorld component. In the props section, I saw:
+
+
+name: "Focus Bear"
+new entry: ""
+This told me the name prop was being passed correctly in this case—so the problem might be related to when the prop was set in other parts of the app, not the component itself.
+
+Step 2 – Debugging with Chrome DevTools Breakpoint
+To dig deeper, I switched to Chrome DevTools → Sources tab and opened HelloWorld.js (as shown in my second screenshot). I set a breakpoint on line 5, where the function starts. When I reloaded the app, the breakpoint triggered, and I could inspect all variables in scope.
+
+Tracing the call stack, I realized that in one of the navigation flows, the parent component wasn’t passing the name prop at all—it was relying on state that wasn’t updated after an API call.
+
+Fix: I updated the parent component to ensure the API call set the state before rendering HelloWorld. After refreshing, React DevTools confirmed the name prop was always populated, and the greeting displayed correctly.
+
+Lesson Learned:
+
+React DevTools is great for confirming whether a prop or state is actually reaching the component.
+
+Chrome DevTools breakpoints make it easier to track execution flow and spot where data stops being passed.
+
+Using both tools together gives a complete picture—what data is at render time and why it got there.
