@@ -50,3 +50,22 @@
 - Use **component names and prop types wisely**—it makes debugging so much easier in the long run.
 
 
+Evidence:
+
+![alt text](image-39.png)
+
+Screenshot – Inspecting Component Props in React DevTools
+Below is a screenshot of me using React DevTools (Components tab) to inspect the HelloWorld component.
+It shows the name prop value ("Focus Bear") passed from the parent, confirming that props are flowing correctly.
+
+📍 Using Chrome DevTools Breakpoint (fastest option)
+
+![alt text](image-40.png)
+
+Chrome DevTools – Breakpoint in HelloWorld.js
+
+This screenshot shows the Sources panel in Chrome DevTools with a breakpoint set at line 5 of HelloWorld.js.
+
+The breakpoint is placed at the start of the HelloWorld function so execution will pause before the useTranslation() hook is called.
+
+This allows me to inspect variables in the scope, step through the function, and verify that the name prop and translation function are working correctly.
