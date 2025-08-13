@@ -311,11 +311,16 @@ I'll definitely be using this in real-world projects when bugs slip in over time
 
 # Reflections on Commit Message Best Practices
 
-As part of understanding Git workflows, I explored the impact of different styles of commit messages. I made three commits with varied messages:
+Screenshot of the git messages
+
+As part of understanding Git workflows, I explored the impact of different styles of commit messages. I made three commits with varied messages (screenshots added for additional clarity):
 
 1. A vague message: `fixed stuff`
+![alt text](image-49.png)
 2. An overly detailed message: a full paragraph explaining every line change
+
 3. A clear, well-structured message: `Added changes on good git commit messages to the git markdown file`
+![alt text](image-50.png)
 
 ---
 

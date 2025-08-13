@@ -272,111 +272,35 @@ I:
 Even though the test was working, applying DRY made it more **elegant, robust, and maintainable**. Clean code isn’t just about what works — it’s about what lasts.
 
 
-# Refactoring Code for Simplicity reflection
 
-## 🎯 Goal
+Pre DRY implementation in PostViewertest.js
 
-Simplify complex or over-engineered React code while keeping the same functionality.
+![alt text](image-43.png)
 
----
+What’s repetitive:
 
-## 🧱 Original Complex Code (React.js)
+Query construction for title/body regex.
+
+Test body re-implements “assert post visible” logic.
+
+Setup/teardown isn’t centralized for future tests.
+
+POST DRY implementation in PostViewertest.js
+
+![alt text](image-44.png)
+
+What improved:
+
+Single source of truth for post assertions via expectPostVisible().
+
+Reusable render via renderSUT().
+
+Adding new scenarios (e.g., different post content, error/loading states) no longer duplicates query code.
+
+Clear setup/teardown with beforeEach + afterEach.
 
 
-import React, { useState, useEffect } from 'react';
 
-const UserList = () => {
-  const [users, setUsers] = useState([]);
-  const [isLoading, setLoading] = useState(true);
-  const [hasError, setError] = useState(false);
-
-  useEffect(() => {
-    async function fetchUsers() {
-      try {
-        const res = await fetch('https://jsonplaceholder.typicode.com/users');
-        if (!res.ok) {
-          throw new Error('Failed to fetch');
-        }
-        const data = await res.json();
-        setUsers(data);
-      } catch (err) {
-        setError(true);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchUsers();
-  }, []);
-
-  if (isLoading) {
-    return <p>Loading...</p>;
-  }
-
-  if (hasError) {
-    return <p>Error loading users.</p>;
-  }
-
-  return (
-    <ul>
-      {users.map((user) => (
-        <li key={user.id}>
-          <strong>{user.name}</strong> - {user.email}
-        </li>
-      ))}
-    </ul>
-  );
-};
-
-export default UserList;
-🔍 Why It Was Over-Engineered
-Separate states for loading, error, and data made the logic longer and harder to follow.
-
-The fetch logic was deeply nested.
-
-No separation of concerns — all logic is packed into one component.
-
-✅ Refactored Simpler Version
-jsx
-Copy
-Edit
-import React from 'react';
-import useSWR from 'swr';
-
-const fetcher = (url) => fetch(url).then((res) => res.json());
-
-const UserList = () => {
-  const { data: users, error } = useSWR(
-    'https://jsonplaceholder.typicode.com/users',
-    fetcher
-  );
-
-  if (error) return <p>Error loading users.</p>;
-  if (!users) return <p>Loading...</p>;
-
-  return (
-    <ul>
-      {users.map((user) => (
-        <li key={user.id}>
-          <strong>{user.name}</strong> - {user.email}
-        </li>
-      ))}
-    </ul>
-  );
-};
-
-export default UserList;
-✨ How Refactoring Improved It
-Replaced useEffect and multiple state variables with useSWR, which handles caching, loading, and errors.
-
-Removed deeply nested logic.
-
-Component is shorter, clearer, and easier to maintain.
-
-Easier to test and reuse — logic and UI are now separated.
-
-💡 Final Thoughts
-Simplicity is about reducing moving parts without sacrificing clarity. Using tools like useSWR or custom hooks can help reduce boilerplate and make React components cleaner and more declarative.
 
 
 # Reflections on Writing Comments and Documentation
@@ -537,3 +461,51 @@ Link for the file for which test was written: my-react-app/src/utils/math.js
 
 Screenshot of the unit test
 ![alt text](image-42.png)
+
+Naming Variables & Functions #43
+
+What makes a good variable or function name?
+A good name is descriptive, specific, and contextual.
+
+Functions should use verbs to clearly state their purpose (calculateTotal, fetchUserData, normalizeEmail).
+
+Variables should use nouns that accurately describe the data they store (subtotal, invoiceTotal, userProfile).
+
+Names should match the domain language so they are familiar to the project’s stakeholders.
+
+Avoid unclear abbreviations unless they are widely understood in the domain (e.g., URL, ID).
+
+What issues can arise from poorly named variables?
+Confusion — Developers waste time figuring out what a variable means.
+
+Slower code reviews — Reviewers must reverse-engineer the intent.
+
+Misuse — Developers might pass incorrect data (e.g., mixing up subtotal and tax).
+
+Hidden bugs — Ambiguous names can cause logic errors that are harder to detect.
+
+Refactoring risk — Developers may hesitate to change code if they don’t fully understand the original meaning.
+
+How did refactoring improve code readability?
+Clarity — Reading the code now tells a logical story without needing extra comments.
+
+Self-documenting code — The names explain their own purpose.
+
+Testing ease — Smaller, clearly named helpers (e.g., getFullName, calculateDiscountedTotal) are easier to test.
+
+Reduced cognitive load — Future maintainers can quickly understand and modify the code.
+
+
+Evidence:
+
+![alt text](image-45.png)
+// src/utils/user.js (before)
+
+![alt text](image-46.png)
+// src/utils/user.js (after)
+
+![alt text](image-47.png)
+// src/ utils/pricing.js (before)
+
+![alt text](image-48.png)
+// src/ utils/pricing.js (after)
