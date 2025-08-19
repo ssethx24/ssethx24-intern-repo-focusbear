@@ -20,3 +20,6 @@ I found it really useful that **React Developer Tools** not only shows the compo
 
 **Lighthouse** was also eye-opening — it shows performance scores and suggests optimizations I wouldn’t have thought of on my own. This is my first time using it. 
  
+ ![alt text](installedchromeextensions.jpg)
+
+ Screenshot confirming installation of the chrome extensions. 
