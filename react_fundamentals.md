@@ -180,3 +180,25 @@ Screenshot of component styled with tailwind css
 
 b6bc1ea102b994d16d06b5083ea35e491c588f88 commit id 
 ![alt text](image-53.png)
+
+### Example from Counter.js
+
+### Example from Counter.js
+
+I tested this in my `Counter.js`:
+
+```jsx
+const [count, setCount] = useState(0);
+
+const incrementDirect = () => {
+  count++;   // ❌ Direct modification
+};
+When I clicked the button, the console log showed count increasing,
+but the UI (<p>Count: {count}</p>) did not update.
+
+After switching to the correct method:
+
+jsx
+Copy code
+setCount(prev => prev + 1); // ✅ Proper update
+the UI updated immediately.
