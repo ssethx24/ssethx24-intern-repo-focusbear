@@ -318,6 +318,7 @@ As part of understanding Git workflows, I explored the impact of different style
 1. A vague message: `fixed stuff`
 ![alt text](image-49.png)
 2. An overly detailed message: a full paragraph explaining every line change
+![alt text](image-51.png)
 
 3. A clear, well-structured message: `Added changes on good git commit messages to the git markdown file`
 ![alt text](image-50.png)
