@@ -152,6 +152,47 @@ Possible stale or incorrect values due to React’s batching of updates.
 
 Breaks the predictable state flow in React, making debugging harder.
 
+### Example from Counter.js
+
+I tested this in my `Counter.js`:
+
+```jsx
+const [count, setCount] = useState(0);
+
+const incrementDirect = () => {
+  count++;   // ❌ Direct modification
+};
+When I clicked the button, the console log showed count increasing,
+but the UI (<p>Count: {count}</p>) did not update.
+
+After switching to the correct method:
+
+jsx
+Copy code
+setCount(prev => prev + 1); // ✅ Proper update
+the UI updated immediately.
+
+
+## Styling with Tailwind CSS — Counter & Button
+
+### What I changed
+- **Counter.js** now uses Tailwind utilities for layout and typography:
+  - Page/container: `min-h-screen bg-slate-50 flex items-center justify-center p-6`
+  - Card: `bg-white rounded-xl shadow-sm ring-1 ring-slate-200 p-6`
+  - Title: `text-lg font-semibold text-slate-800`
+  - Count row: `mt-3 flex items-baseline gap-2`
+  - Count number: `text-5xl font-bold leading-none text-slate-900`
+  - Buttons grid: `mt-5 grid grid-cols-2 gap-3`
+- **Button component** (`src/components/Button.jsx`) with variants, sizes, and states:
+  - **Base:** `inline-flex items-center justify-center rounded-md font-medium tracking-tight transition-transform duration-100 active:scale-95 transition-colors focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none`
+  - **primary:** `bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800 focus-visible:ring-blue-600`
+  - **secondary:** `bg-white text-slate-700 ring-1 ring-slate-300 hover:bg-slate-50 active:bg-slate-100 focus-visible:ring-slate-500`
+  - **danger:** `bg-rose-600 text-white hover:bg-rose-700 active:bg-rose-800 focus-visible:ring-rose-600`
+  - **Sizes:** `sm: text-sm px-3 py-1.5`, `md: text-sm px-3.5 py-2`, `lg: text-base px-4 py-2.5`
+  - Accessibility: `focus-visible` ring + `ring-offset-2`; `active:scale-95` for press feedback.
+
+**Commit ID(s):** `<REPLACE_WITH_YOUR_COMMIT_HASH>`
+
 #Advantages of using Tailwind CSS
 
 Rapid development – Style directly in JSX without switching to a CSS file.
@@ -179,26 +220,5 @@ Build dependency – Requires Tailwind/PostCSS setup, which adds a build step.
 Screenshot of component styled with tailwind css 
 
 b6bc1ea102b994d16d06b5083ea35e491c588f88 commit id 
-![alt text](image-53.png)
-
-### Example from Counter.js
-
-### Example from Counter.js
-
-I tested this in my `Counter.js`:
-
-```jsx
-const [count, setCount] = useState(0);
-
-const incrementDirect = () => {
-  count++;   // ❌ Direct modification
-};
-When I clicked the button, the console log showed count increasing,
-but the UI (<p>Count: {count}</p>) did not update.
-
-After switching to the correct method:
-
-jsx
-Copy code
-setCount(prev => prev + 1); // ✅ Proper update
-the UI updated immediately.
+Counter styled with Tailwind + Button variants in action:  
+![alt text](image-56.png)
